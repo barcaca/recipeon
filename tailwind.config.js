@@ -3,6 +3,11 @@ module.exports = {
   content: ['./src/**/*.{html,js}'],
   darkMode: ['class'],
   theme: {
+    fontFamily: {
+      sans: ['Raleway', 'system-ui', 'sans-serif'],
+      display: ['Cinzel Decorative', 'system-ui', 'sans-serif'],
+      title: ['Poppins', 'system-ui', 'sans-serif'],
+    },
     extend: {
       colors: {
         background: 'hsl(var(--background))',
