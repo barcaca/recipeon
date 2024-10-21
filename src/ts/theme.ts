@@ -29,6 +29,8 @@ export const initTheme = (): void => {
     root.classList.remove('light', 'dark')
     root.classList.add(scheme)
     root.style.colorScheme = scheme
+
+    themeButton?.setAttribute('data-theme', scheme)
   }
 
   const toggleTheme = () => {
