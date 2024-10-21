@@ -9,6 +9,9 @@ module.exports = {
       title: ['Poppins', 'system-ui', 'sans-serif'],
     },
     extend: {
+      screens: {
+        xs: '450px',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
