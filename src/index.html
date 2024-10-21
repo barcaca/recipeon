@@ -1,13 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/global.css" />
+    <title>Recipeon</title>
   </head>
-  <body class="bg-background">
-    <div><button id="theme-toggle">Theme</button></div>
+  <body class="min-h-screen w-full bg-background antialiased">
+    <header class="sticky top-0 h-16 w-full bg-primary text-primary-foreground">
+      <nav
+        class="mx-auto flex h-full max-w-screen-xl items-center justify-between px-6"
+      >
+        <a href="/" class="flex items-center gap-1">
+          <img src="/logo.svg" alt="Recipeon" class="h-8 w-auto" />
+          <span class="font-display font-bold">RecipeoN</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <form action="#">
+            <input
+              type="text"
+              class="input h-9 w-80 font-sans placeholder:font-semibold placeholder:text-primary-foreground"
+              placeholder="Procurar..."
+            />
+          </form>
+          <button
+            type="button"
+            id="theme-toggle"
+            variant="secondary"
+            size="icon"
+            class="btn !size-8 rounded-full"
+          >
+            <svg
+              class="size-5"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-sun"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
     <script type="module" src="./ts/main.ts"></script>
   </body>
 </html>
