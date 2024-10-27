@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="styles/global.css" />
     <title>Recipeon</title>
   </head>
-  <body class="bg-background flex min-h-screen w-full flex-col antialiased">
-    <header class="bg-primary text-primary-foreground sticky top-0 h-16 w-full">
+  <body class="flex min-h-screen w-full flex-col bg-background antialiased">
+    <header class="sticky top-0 h-16 w-full bg-primary text-primary-foreground">
       <nav
         class="mx-auto flex h-full max-w-screen-xl items-center justify-between px-6"
       >
         <a href="/" class="flex items-center gap-1">
           <img src="/logo.svg" alt="Recipeon" class="h-8 w-auto" />
-          <span class="font-display xs:inline-block hidden font-bold"
+          <span class="hidden font-display font-bold xs:inline-block"
             >RecipeoN</span
           >
         </a>
@@ -28,7 +28,7 @@
           <label
             action="#"
             id="search"
-            class="input [&:has(:focus-visible)]:ring-primary-foreground relative flex h-9 w-48 items-center p-0 sm:w-80 [&:has(:focus-visible)]:ring-2"
+            class="input relative flex h-9 w-48 items-center p-0 sm:w-80 [&:has(:focus-visible)]:ring-2 [&:has(:focus-visible)]:ring-primary-foreground"
           >
             <svg
               class="absolute ml-2"
@@ -50,7 +50,7 @@
               type="text"
               id="q"
               name="q"
-              class="input placeholder:text-primary-foreground border-none pl-10 font-sans placeholder:font-semibold focus-visible:outline-none"
+              class="input border-none pl-10 font-sans placeholder:font-semibold placeholder:text-primary-foreground focus-visible:outline-none"
               placeholder="Procurar..."
             />
           </label>
@@ -102,11 +102,66 @@
         </div>
       </nav>
     </header>
-    <footer class="bg-background h-16 w-full">
+    <main class="h-full w-full flex-1 bg-background py-6">
+      <div
+        class="mx-auto flex max-w-screen-xl flex-col gap-6 px-3 py-2 xs:px-6"
+      >
+        <header class="flex h-16 items-center justify-between">
+          <div>
+            <h1
+              id="tabTitle"
+              class="font-title text-xl font-semibold text-foreground"
+            >
+              Café da Manha
+            </h1>
+            <p id="tabSubtitle" class="font-sans text-sm text-muted-foreground">
+              Receitas matinais
+            </p>
+          </div>
+          <a
+            href="/nova-receita"
+            id="btn-add-recipe"
+            class="btn items-center gap-2 text-sm"
+            variant="primary"
+            size="sm"
+          >
+            <svg
+              class="size-4"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 2.5C9 1.94687 8.55312 1.5 8 1.5C7.44688 1.5 7 1.94687 7 2.5V7H2.5C1.94687 7 1.5 7.44688 1.5 8C1.5 8.55312 1.94687 9 2.5 9H7V13.5C7 14.0531 7.44688 14.5 8 14.5C8.55312 14.5 9 14.0531 9 13.5V9H13.5C14.0531 9 14.5 8.55312 14.5 8C14.5 7.44688 14.0531 7 13.5 7H9V2.5Z"
+                fill="currentColor"
+              />
+            </svg>
+            Nova receita
+          </a>
+        </header>
+        <div id="tabBase" data-slot="tabBase" class="inline-flex">
+          <div
+            id="tabList"
+            data-slot="tabList"
+            role="tablist"
+            class="flex h-fit flex-nowrap items-center gap-2 overflow-x-auto px-1 py-2"
+          ></div>
+        </div>
+        <div
+          id="tabContent"
+          role="tabpanel"
+          data-slot="tabContent"
+          class="flex flex-wrap items-center justify-center gap-5"
+        ></div>
+      </div>
+    </main>
+    <footer class="h-16 w-full bg-background">
       <div
         class="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-2 p-6 sm:flex-row sm:py-3"
       >
-        <p class="text-muted-foreground order-2 font-sans text-sm sm:order-1">
+        <p class="order-2 font-sans text-sm text-muted-foreground sm:order-1">
           © 2024 Luan Barcaça. Alura Desafio
         </p>
         <div class="order-1 flex items-center gap-2 sm:order-2">
